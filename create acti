@@ -1,0 +1,1 @@
+Create table activite (ID INTEGER PRIMARY KEY AUTOINCREMENT, ComInsee text,ComLib text,EquipementID text,EquNbEquIdentique text,ActCode text,ActLib text,EquActivitePraticable text,EquActivitePratique text,EquActiviteSalleSpe text,ActNivLib text, foreign key(EquipementId) references Equipement(EquipementId));
