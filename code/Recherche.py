@@ -9,6 +9,7 @@ class Recherche :
     def __init__():
         conn = sqlite3.connect('data.db')
         c = conn.cursor()
+        """ Penser au conn.close() ! """
 
     def activiteRecherche(nomAct):
         """
