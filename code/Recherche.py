@@ -6,10 +6,9 @@ import Equipement
 class Recherche :
     """ Classe qui effectue des recherches en utilisant les objets Activites et Equipements """
 
-    def __init__():
-        conn = sqlite3.connect('data.db')
-        c = conn.cursor()
-        """ Penser au conn.close() ! """
+    def __init__(self):
+        self.conn = sqlite3.connect('data.db')
+        self.c = conn.cursor()
 
     def activiteRecherche(nomAct):
         """
@@ -35,3 +34,7 @@ class Recherche :
             print(row)
             row = c.fetchone()
     """
+
+    def __del__(self):
+        """Destructeur de la classe"""
+        self.conn.close()
