@@ -30,7 +30,7 @@ class Recherche :
         return listeAct
 
 
-    def activiteRechercheByDep(self, ComLib):
+    def activiteRechercheByCom(self, ComLib):
         """
         Methode qui recherche une activité avec son nom
         Retourne son nom, le nom de la commune, l'ID de l'activité et l'ID de l'équipement associé
@@ -44,7 +44,7 @@ class Recherche :
             act = Activite(ActLib, ComLib, Id, EquipementId)
             listeAct.append(act)
             row = self.c.fetchone()
-        return liste
+        return listeAct
     def sportEqResearchByEqu(self,equip):
         """
         Methode qui recherche un équipement par son nom
