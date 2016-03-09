@@ -45,6 +45,6 @@ class Recherche :
             row = c.fetchone()
     """
 
-    maRecherche = Recherche()
-    test  = maRecherche.activiteRecherche("Foot")
-    print(test)
+maRecherche = Recherche()
+test  = maRecherche.activiteRecherche("Foot")
+print(test)
