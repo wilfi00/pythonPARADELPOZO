@@ -10,6 +10,10 @@ class Recherche :
         self.conn = sqlite3.connect('data.db')
         self.c = conn.cursor()
 
+    def __del__(self):
+        """Destructeur de la classe"""
+        self.conn.close()
+
     def activiteRecherche(self, nomAct):
         """
         Methode qui recherche une activité avec son nom
@@ -41,7 +45,6 @@ class Recherche :
             row = c.fetchone()
     """
 
-    def __del__(self):
-        """Destructeur de la classe"""
-        self.conn.close()
->>>>>>> 695582d6f3bbc4a1737ccadf25fc8637241ab71c
+    maRecherche = Recherche()
+    test  = maRecherche.activiteRecherche("Foot")
+    print(test)
