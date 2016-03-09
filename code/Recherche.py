@@ -45,6 +45,7 @@ class Recherche :
             listeAct.append(act)
             row = self.c.fetchone()
         return listeAct
+
     def sportEqResearchByEqu(self,equip):
         """
         Methode qui recherche un équipement par son nom
