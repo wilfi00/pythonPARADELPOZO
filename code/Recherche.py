@@ -46,43 +46,6 @@ class Recherche :
             row = self.c.fetchone()
         return liste
 
-    def sportEqResearchByDep(self,dep):
-        """
-        Methode qui recherche un équipement par département
-        """
-        req = "select ComInsee, ComLib, InsNom, EquipementId, EquNom from equipement where ComInsee like '" + dep + "%';"
-        self.c.execute(req)
-        row = self.c.fetchone()
-        liste = []
-        return listeAct
-
-
-
-    def sportEqResearch(eq, numLib):
-        if numLib == 0:
-            req = "select ComLib, EquNom from equipement where EquNom like '%" + eq + "%';"
-        else:
-            req = "select ComLib, EquNom from equipement where EquNom like '%" + eq + "%' and ComInsee like '" + str(numLib) + "%';"
-        c.execute(req)
-        row = c.fetchone()
-        while row is not None:
-<<<<<<< HEAD
-            print(row)
-            row = c.fetchone()
-    """
-
-maRecherche = Recherche()
-listeAct = maRecherche.activiteRecherche("Foot")
-maRecherche.__del__()
-for i in listeAct:
-    print(i)
-=======
-            insee,comlib,insnom,equid,equnom = row
-            equ = Equipement(insee,comlib,insnom,equid,equnom)
-            liste.append(equ)
-            row = self.c.fetchone()
-        return liste
-
     def sportEqResearchByEqu(self,equip):
         """
         Methode qui recherche un équipement par son nom
@@ -97,4 +60,18 @@ for i in listeAct:
             liste.append(equ)
             row = self.c.fetchone()
         return liste
->>>>>>> 7e321b27fd627f97bc9edd718af013119a3ec824
+
+    def sportEqResearchByDep(self,dep):
+        """
+        Methode qui recherche un équipement par son nom
+        """
+        req = "select ComInsee, ComLib, InsNom, EquipementId, EquNom from equipement where ComInsee like '" + dep + "%';"
+        self.c.execute(req)
+        row = self.c.fetchone()
+        liste = []
+        while row is not None:
+            insee,comlib,insnom,equid,equnom = row
+            equ = Equipement(insee,comlib,insnom,equid,equnom)
+            liste.append(equ)
+            row = self.c.fetchone()
+        return liste
