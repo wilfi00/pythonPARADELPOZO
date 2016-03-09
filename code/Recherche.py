@@ -46,5 +46,6 @@ class Recherche :
 
 maRecherche = Recherche()
 listeAct = maRecherche.activiteRecherche("Foot")
+maRecherche.__del__()
 for i in listeAct:
     print(i)
