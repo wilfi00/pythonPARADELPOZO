@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 class Equipement :
     """Classe permettant la modélisation d'un équipement sportif"""
 
