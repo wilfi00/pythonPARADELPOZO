@@ -11,17 +11,23 @@ class Recherche :
         c = conn.cursor()
         """ Penser au conn.close() ! """
 
-    def activiteRecherche(nomAct):
+    def activiteRecherche(self, nomAct):
         """
         Methode qui recherche une activité avec son nom
         Retourne son nom, le nom de la commune, l'ID de l'activité et l'ID de l'équipement associé
         """
         req = "select ActLib, ComLib, Id, EquipementId from activite where ActLib = '" + nomAct + "';"
-        c.execute(req)
-        row = c.fetchone()
+        self.c.execute(req)
+        row = self.c.fetchone()
+        liste = []
         while row is not None:
+            liste = row
             print(row)
-            row = c.fetchone()
+            row = self.c.fetchone()
+        return liste
+
+        """activiteRecherche = Activite()"""
+
 
     """
     def sportEqResearch(eq, numLib):
@@ -35,3 +41,6 @@ class Recherche :
             print(row)
             row = c.fetchone()
     """
+maRecherche = Recherche
+test  = maRecherche.activiteRecherche(maRecherche, "Foot")
+print(test)
