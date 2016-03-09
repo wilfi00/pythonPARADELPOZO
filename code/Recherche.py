@@ -7,8 +7,8 @@ class Recherche :
     """ Classe qui effectue des recherches en utilisant les objets Activites et Equipements """
 
     def __init__(self):
-        self.conn = sqlite3.connect('data.db')
-        self.c = conn.cursor()
+        self.conn = sqlite3.connect('../data.db')
+        self.c = self.conn.cursor()
 
     def __del__(self):
         """Destructeur de la classe"""
@@ -19,7 +19,7 @@ class Recherche :
         Methode qui recherche une activité avec son nom
         Retourne son nom, le nom de la commune, l'ID de l'activité et l'ID de l'équipement associé
         """
-        req = "select ActLib, ComLib, Id, EquipementId from activite where ActLib = '" + nomAct + "';"
+        req = "select ActLib, ComLib, Id, EquipementId from activite where ActLib like '%" + nomAct + "%';"
         self.c.execute(req)
         row = self.c.fetchone()
         liste = []
