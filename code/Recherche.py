@@ -1,15 +1,14 @@
 # -*- coding: utf-8 -*-
 import Activite
 import sqlite3
-"""import Mabite"""
+import Equipement
 
 class Recherche :
     """ Classe qui effectue des recherches en utilisant les objets Activites et Equipements """
 
-    def __init__():
-        conn = sqlite3.connect('data.db')
-        c = conn.cursor()
-        """ Penser au conn.close() ! """
+    def __init__(self):
+        self.conn = sqlite3.connect('data.db')
+        self.c = conn.cursor()
 
     def activiteRecherche(self, nomAct):
         """
@@ -41,6 +40,8 @@ class Recherche :
             print(row)
             row = c.fetchone()
     """
-maRecherche = Recherche
-test  = maRecherche.activiteRecherche(maRecherche, "Foot")
-print(test)
+
+    def __del__(self):
+        """Destructeur de la classe"""
+        self.conn.close()
+>>>>>>> 695582d6f3bbc4a1737ccadf25fc8637241ab71c
