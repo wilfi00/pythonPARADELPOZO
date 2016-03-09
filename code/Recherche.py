@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import Activite
 import sqlite3
-"""import Mabite"""
+import Equipement
 
 class Recherche :
     """ Classe qui effectue des recherches en utilisant les objets Activites et Equipements """
