@@ -21,10 +21,11 @@ class Recherche :
         req = "select ActLib, ComLib, Id, EquipementId from activite where ActLib like '%" + nomAct + "%';"
         self.c.execute(req)
         row = self.c.fetchone()
-        liste = []
+        listeAct = []
         while row is not None:
-            liste = row
-            print(row)
+            ActLib, ComLib, Id, EquipementId = row
+            act = Activite(ActLib, ComLib, Id, EquipementId)
+            listeAct.append(act)
             row = self.c.fetchone()
         return liste
 
@@ -36,6 +37,17 @@ class Recherche :
         self.c.execute(req)
         row = self.c.fetchone()
         liste = []
+        return listeAct
+
+
+
+    def sportEqResearch(eq, numLib):
+        if numLib == 0:
+            req = "select ComLib, EquNom from equipement where EquNom like '%" + eq + "%';"
+        else:
+            req = "select ComLib, EquNom from equipement where EquNom like '%" + eq + "%' and ComInsee like '" + str(numLib) + "%';"
+        c.execute(req)
+        row = c.fetchone()
         while row is not None:
             insee,comlib,insnom,equid,equnom = row
             equ = Equipement(insee,comlib,insnom,equid,equnom)
