@@ -4,8 +4,8 @@ class Activite :
     def __init__(self, ActLib, ComLib, Id, EquipementId):
         self.nomAct = ActLib
         self.comAct = ComLib
-        self.Id = Id
-        self.EquipementId = EquipementId
+        self.Id = str(Id)
+        self.EquipementId = str(EquipementId)
 
 
     def __str__(self):

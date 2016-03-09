@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import Activite
+from Activite import *
 import sqlite3
 import Equipement
 
@@ -22,14 +22,13 @@ class Recherche :
         req = "select ActLib, ComLib, Id, EquipementId from activite where ActLib like '%" + nomAct + "%';"
         self.c.execute(req)
         row = self.c.fetchone()
-        liste = []
+        listeAct = []
         while row is not None:
-            liste = row
-            print(row)
+            ActLib, ComLib, Id, EquipementId = row
+            act = Activite(ActLib, ComLib, Id, EquipementId)
+            listeAct.append(act)
             row = self.c.fetchone()
-        return liste
-
-        """activiteRecherche = Activite()"""
+        return listeAct
 
 
     """
@@ -46,5 +45,6 @@ class Recherche :
     """
 
 maRecherche = Recherche()
-test  = maRecherche.activiteRecherche("Foot")
-print(test)
+listeAct = maRecherche.activiteRecherche("Foot")
+for i in listeAct:
+    print(i)
