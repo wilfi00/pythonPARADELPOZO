@@ -29,6 +29,23 @@ class Recherche :
             row = self.c.fetchone()
         return liste
 
+
+    def activiteRechercheByDep(self, ComLib):
+        """
+        Methode qui recherche une activité avec son nom
+        Retourne son nom, le nom de la commune, l'ID de l'activité et l'ID de l'équipement associé
+        """
+        req = "select ActLib, ComLib, Id, EquipementId from activite where ComLib like '%" + ComLib + "%';"
+        self.c.execute(req)
+        row = self.c.fetchone()
+        listeAct = []
+        while row is not None:
+            ActLib, ComLib, Id, EquipementId = row
+            act = Activite(ActLib, ComLib, Id, EquipementId)
+            listeAct.append(act)
+            row = self.c.fetchone()
+        return liste
+
     def sportEqResearchByDep(self,dep):
         """
         Methode qui recherche un équipement par département
