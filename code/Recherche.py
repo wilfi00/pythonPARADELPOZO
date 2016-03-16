@@ -20,7 +20,7 @@ class Recherche :
         """
         listeAct = []
         try:
-            req = "select ActLib, ComLib, Id, EquipementId from activite where ActLib like '%" + nomAct + "%';"
+            req = "select ActLib, ComLib, Id, EquipementId from activite where ActLib like '" + nomAct + "';"
         except TypeError:
             print("Wrong input")
         else:
@@ -91,7 +91,7 @@ class Recherche :
         """
         liste = []
         try:
-            req = "select ComInsee, ComLib, InsNom, EquipementId, EquNom from equipement where ComInsee like '" + dep + "%';"
+            req = "select ComInsee, ComLib, InsNom, EquipementId, EquNom from equipement where ComInsee like '  " + dep + "%';"
         except TypeError:
             print("Wrong input")
         else:
@@ -107,6 +107,3 @@ class Recherche :
                     liste.append(equ)
                     row = self.c.fetchone()
         return liste
-
-rechercheTest = Recherche()
-rechercheTest.sportEqResearchByDep("44")
