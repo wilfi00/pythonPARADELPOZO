@@ -20,7 +20,7 @@ class Recherche :
         """
         listeAct = []
         try:
-            req = "select ActLib, ComLib, Id, EquipementId from activite where ActLib like '" + nomAct + "';"
+            req = "select ActLib, ComLib, Id, EquipementId from activite where ActLib like '%" + nomAct + "%';"
         except TypeError:
             print("Wrong input")
         else:
@@ -45,7 +45,7 @@ class Recherche :
         """
         listeAct = []
         try:
-            req = "select ActLib, ComLib, Id, EquipementId from activite where ComLib like '%" + ComLib + "%';"
+            req = "select ActLib, ComLib, Id, EquipementId from activite where ComLib like '" + ComLib + "';"
         except TypeError:
             print("Wrong input")
         else:
