@@ -63,9 +63,9 @@ class Recherche :
 
     def sportEqResearchByDep(self,dep):
         """
-        Methode qui recherche un équipement par son nom
+        Methode qui recherche un équipement par son département
         """
-        req = "select ComInsee, ComLib, InsNom, EquipementId, EquNom from equipement where ComInsee like '" + dep + "%';"
+        req = "select ComInsee, ComLib, InsNom, EquipementId, EquNom from equipement where ComInsee like '%" + dep + "%';"
         self.c.execute(req)
         row = self.c.fetchone()
         liste = []
