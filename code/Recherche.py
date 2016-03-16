@@ -107,3 +107,6 @@ class Recherche :
                     liste.append(equ)
                     row = self.c.fetchone()
         return liste
+
+rechercheTest = Recherche()
+print(rechercheTest.sportEqResearchByDep("85"))
