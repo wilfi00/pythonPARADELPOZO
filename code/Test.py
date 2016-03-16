@@ -17,9 +17,14 @@ class Test(unittest.TestCase):
         self.assertTrue(activiteTest in rechercheTest.activiteRechercheByCom("ABBARETZ"))
 
     def test_equipementRechercheByCom(self):
+        rechercheTest = Recherche()
+        equipementTest = Equipement()
+
         self.assertTrue(True)
 
     def test_sportEqResearchByDep(self):
+        rechercheTest = Recherche()
+
         self.assertTrue(True)
 
 
