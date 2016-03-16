@@ -91,7 +91,7 @@ class Recherche :
         """
         liste = []
         try:
-            req = "select ComInsee, ComLib, InsNom, EquipementId, EquNom from equipement where ComInsee like '  " + dep + "%';"
+            req = "select ComInsee, ComLib, InsNom, EquipementId, EquNom from equipement where ComInsee like '" + dep + "%';"
         except TypeError:
             print("Wrong input")
         else:
