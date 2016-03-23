@@ -15,7 +15,7 @@ $(document).ready(function()
         success:function(data){
           response($.map(data, function(valeur){
                 return {
-                  label:valeur.Ville+" ("+valeur.CodePostal +")",
+                  label:valeur.Ville,
                   valeur:valeur.Ville,
                   CodePostal:valeur.CodePostal
                 }

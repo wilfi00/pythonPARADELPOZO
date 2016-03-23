@@ -23,33 +23,29 @@
   </head>
 
   <body>
-    <h1 id="commLabel">Entrez une commune :</h1>
+    <div class="container">
+      <h1 id="commLabel">Entrez une commune :</h1> <br/><br/>
 
-      <input id="commune" type="text" name="commune"><br/><br/><br/>
-      
+      <input id="commune" type="text" name="commune">&nbsp;&nbsp;
       <button type="submit" id="recherche" class="btn btn-default" aria-label="Left Align">
-        Rechercher&nbsp;&nbsp;<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+      Rechercher&nbsp;&nbsp;<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
       </button>
+    </div> <br/><br/>
+    <div class="container">
+        <table id="photos" class="display" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+                <th>Commune</th>
+                <th>Activité</th>
+                <th>EquipementId</th>
+            </tr>
+          </thead>
 
-    <div>
-      <table id="photos" class="display" width="100%" cellspacing="0">
-        <thead>
-          <tr>
-              <th>Photo</th>
-              <th>Nom</th>
-              <th>Heure</th>
-              <th>ID photographe</th>
-              <th>Start date</th>
-              <th>Salary</th>
-          </tr>
-        </thead>
+          <tbody>
 
-        <tbody>
-
-        </tbody>
-      </table>
-
-    </div>
+          </tbody>
+        </table>
+      </div>
   </body>
 
 </html>
