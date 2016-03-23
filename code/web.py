@@ -6,7 +6,7 @@ from json import dumps
 def error404(error):
     return '<img style="position: absolute; left: 50%; top: 50%; margin-left: -285px; margin-top: -190px;" alt="Page Not Found (404)." src="https://css-tricks.com/images/404.jpg">'
 
-@route('/equByDep/<dep>')
+@route('/equByDep/?<dep>')
 def index(dep):
     search = Recherche()
     result = search.sportEqResearchByDep(dep)
