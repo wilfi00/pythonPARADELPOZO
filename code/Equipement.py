@@ -17,3 +17,7 @@ class Equipement :
     def __eq__(self, other):
         """Redefinition de equals"""
         return (self.comInsee == other.comInsee and self.comLib == other.comLib and self.inst == other.inst and self.equID == other.equID and self.equNom == other.equNom)
+
+    def toJSON(self):
+        """Return the JSON string representing the object"""
+        return {'comInsee' : self.comInsee,'comLib' : self.comLib,'inst' : self.inst,'equID' : self.equID,'equNom' : self.equNom}

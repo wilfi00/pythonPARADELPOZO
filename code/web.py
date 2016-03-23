@@ -1,5 +1,6 @@
-from bottle import route, run, template, error
+from bottle import route, run, template, error, response
 from Recherche import *
+from json import dumps
 
 @error(404)
 def error404(error):
@@ -9,20 +10,22 @@ def error404(error):
 def index(dep):
     search = Recherche()
     result = search.sportEqResearchByDep(dep)
-    str = '<body style="font-family:Arial">'
+    ret = []
     for r in result :
-        str += "<p>{}</p>".format(r.__str__())
-    str += '</body>'
-    return str
+        ret.append(r.toJSON())
+    response.content_type = 'application/json'
+    return dumps(ret)
+
+
 
 @route('/actByCom/<com>')
 def index(com):
     search = Recherche()
     result = search.activiteRechercheByCom(com)
-    str = '<body style="font-family:Arial">'
+    ret = []
     for r in result :
-        str += "<p>{}</p>".format(r.__str__())
-    str += '</body>'
-    return str
+        ret.append(r.toJSON())
+    response.content_type = 'application/json'
+    return dumps(ret)
 
 run(host='localhost', port=8080)

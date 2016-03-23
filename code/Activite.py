@@ -16,3 +16,7 @@ class Activite :
     def __eq__(self, other):
         """Redefinition de equals"""
         return (self.nomAct == other.nomAct and self.comAct == other.comAct and self.Id == other.Id and self.EquipementId == other.EquipementId)
+
+    def toJSON(self):
+        """Return the JSON string representing the object"""
+        return {'actLib' : self.nomAct,'comLib' : self.comAct,'id' : self.Id,'equID' : self.EquipementId}
