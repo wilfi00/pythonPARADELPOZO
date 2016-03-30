@@ -3,7 +3,7 @@ function myOwnApi(data) {
     alert("Nothing was found :/");
   }
   else {
-    var t = $('#activ').DataTable();
+    var t = $('#listeCommune').DataTable();
     t.clear();
     for (var i = 0; i < data.length; i++) {
       t.row.add( [data[i].comLib,data[i].actLib,data[i].id] ).draw( false );
