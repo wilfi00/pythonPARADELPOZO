@@ -27,11 +27,11 @@ $(document).ready(function()
         console.log(erreur)},
       complete : function(res, statut){console.log("test3")}
     });
+  });
 
     $("#maps").click(function(){
     var comm = $("#commune").val();
     var win = window.open('https://www.google.com/maps/place/'+comm,'_blank');
     win.focus();
     });
-  });
 });
