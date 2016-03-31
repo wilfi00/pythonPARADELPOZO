@@ -26,6 +26,6 @@ def index(com):
     for r in result :
         ret.append(r.toJSON())
     response.content_type = 'application/json'
-    return dumps(ret)
+    return "myOwnApi("+str(ret)+");"
 
 run(host='172.21.65.214', port=8080)
