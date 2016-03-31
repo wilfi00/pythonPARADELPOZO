@@ -28,4 +28,4 @@ def index(com):
     response.content_type = 'application/json'
     return "myOwnApi("+str(ret)+");"
 
-run(host='172.21.65.214', port=8080)
+run(host='localhost', port=8080)
